@@ -1,6 +1,7 @@
 using BookLibraryApi.Application.Services;
 using BookLibraryApi.Domain.Repositories;
 using BookLibraryApi.Domain.Services;
+using BookLibraryApi.Infra.Context;
 using BookLibraryApi.Infra.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IGetBooksService, GetBooksService>();
+builder.Services.AddScoped<BookLibraryContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

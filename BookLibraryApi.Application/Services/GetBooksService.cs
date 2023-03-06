@@ -15,7 +15,7 @@ namespace BookLibraryApi.Application.Services
 
         public IEnumerable<Book> GetBooks()
         {
-            return new List<Book> { new Book { Title = "test" } };
+            return _bookRepository.GetBooks();
         }
     }
 }
