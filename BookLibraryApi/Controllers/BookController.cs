@@ -14,5 +14,12 @@ namespace BookLibraryApi.Controllers
             var result = service.GetBooks();
             return Ok(result);
         }
+
+        [HttpGet("{property}/{value}")]
+        public IActionResult GetBooks([FromServices] IGetBooksService service, [FromRoute] string property, [FromRoute] string value)
+        {
+            var result = service.GetBooks(property, value);
+            return Ok(result);
+        }
     }
 }

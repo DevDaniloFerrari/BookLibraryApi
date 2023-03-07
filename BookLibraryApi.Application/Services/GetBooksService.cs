@@ -13,9 +13,14 @@ namespace BookLibraryApi.Application.Services
             _bookRepository = bookRepository;
         }
 
-        public IEnumerable<Book> GetBooks()
+        public IEnumerable<Book> GetBooks(string property = null, string value = null)
         {
-            return _bookRepository.GetBooks();
+            var query = _bookRepository.GetBooks();
+
+            if (property != null)
+                return query.Where(book => ((string)book[property]).Contains(value));
+
+            return query;
         }
     }
 }
