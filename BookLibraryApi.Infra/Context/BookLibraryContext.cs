@@ -9,7 +9,7 @@ namespace BookLibraryApi.Infra.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=BookLibrary;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=etl;Integrated Security=True;TrustServerCertificate=True");
         }
     }
 }
